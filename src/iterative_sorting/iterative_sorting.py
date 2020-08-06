@@ -1,9 +1,16 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
+
+    length = len(arr)
+    start = 0
+    smallest = 0
+    current = 0
+    placeholder = 0
+    
     # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
+    #for i in range(0, len(arr) - 1):
+        #cur_index = i
+        #smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
@@ -12,14 +19,57 @@ def selection_sort(arr):
         # TO-DO: swap
         # Your code here
 
+    while start < length:
+        smallest = arr[start]
+
+        for i in range(start,length):
+            current = arr[i]
+            if current < smallest:
+                smallest = current
+                placeholder = i
+        if arr[start] is not smallest:
+            while placeholder > start:
+                arr[placeholder] = arr[placeholder-1]
+                arr[placeholder-1] = smallest
+                placeholder -= 1
+        start +=1
+            
     return arr
 
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
+    
+    swapped = True
+    first_val = 0
+    sec_val = 0
+    temp_val = 0
+    length = len(arr)
+
+    while swapped == True:
+        
+        while length > 1:
+            length -=1
+            complete = False
 
 
+            for index in range(0, length): 
+                first_val = arr[index]
+                if arr[index+1] is not None:
+                    sec_val = arr[index+1]
+                if first_val > sec_val:
+                    temp_val = first_val
+                    first_val = sec_val
+                    sec_val = temp_val
+                    temp_val = 0
+                    arr[index] = first_val
+                    if arr[index+1] is not None:
+                        arr[index+1] = sec_val
+                    swapped = True
+                
+                else:
+                    swapped = False
+        
     return arr
 
 '''
