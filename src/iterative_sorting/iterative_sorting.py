@@ -1,3 +1,10 @@
+import random
+import time
+my_range = 5000
+my_size = 500
+
+my_random = random.sample(range(my_range), my_size)
+my_list = [8,2,5,4,1,3,10,99,0]
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
 
@@ -94,3 +101,12 @@ def counting_sort(arr, maximum=None):
 
 
     return arr
+
+print(my_random)
+print(bubble_sort(my_random))
+#print(bubble_sort(my_list))
+
+
+
+print(my_random)
+print(selection_sort(my_random))
