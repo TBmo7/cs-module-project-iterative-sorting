@@ -50,7 +50,7 @@ def bubble_sort(arr):
         
         while length > 1:
             length -=1
-            complete = False
+            
 
 
             for index in range(0, length): 
