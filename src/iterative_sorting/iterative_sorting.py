@@ -1,7 +1,7 @@
 import random
 import time
-my_range = 5000
-my_size = 500
+my_range = 50
+my_size = 10
 
 my_random = random.sample(range(my_range), my_size)
 my_list = [8,2,5,4,1,3,10,99,0]
@@ -26,7 +26,7 @@ def selection_sort(arr):
         # TO-DO: swap
         # Your code here
 
-    while start < length:
+    while (start < length) and length > 0:
         smallest = arr[start]
 
         for i in range(start,length):
@@ -53,7 +53,9 @@ def bubble_sort(arr):
     temp_val = 0
     length = len(arr)
 
-    while swapped == True:
+
+
+    while swapped == True and length > 0:
         
         while length > 1:
             length -=1
